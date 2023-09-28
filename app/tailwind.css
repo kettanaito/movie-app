@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @apply h-full;
+}
+
+body {
+  @apply flex flex-col h-full bg-neutral-900 text-neutral-200;
+}
+
+button,
+.button {
+  @apply bg-neutral-700 text-neutral-100 px-4 py-2.5 font-bold text-center rounded-md;
+  @apply hover:bg-neutral-600;
+  @apply outline-0 focus:ring-4;
+}
+
+button:focus {
+  @apply outline-none focus:ring-4 focus:border-blue-500;
+}
+
+.button-primary {
+  @apply bg-blue-600 text-white;
+  @apply hover:bg-blue-700;
+}
+
+.button-ghost {
+  @apply bg-transparent text-neutral-100 border border-white border-opacity-30;
+  @apply hover:bg-white hover:bg-opacity-10;
+}
+
+input,
+textarea {
+  @apply border border-white border-opacity-20 bg-transparent px-3 py-2 text-white rounded-md;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply text-neutral-600;
+}
+
+input[type='range'] {
+  @apply px-0;
+}
+
+input:focus,
+textarea:focus {
+  @apply outline-none focus:ring-4 focus:border-blue-500;
+}
+
+.animate-placeholder {
+  @apply relative overflow-hidden;
+}
+.animate-placeholder::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-b from-transparent via-white to-transparent opacity-5;
+  animation: placeholderShift infinite 1.5s linear;
+  transform: rotate(-45deg);
+  width: 100%;
+}
+
+@keyframes placeholderShift {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
