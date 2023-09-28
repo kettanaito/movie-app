@@ -30,7 +30,7 @@ export async function loader({ request, params }: LoaderArgs) {
 
   const response = await fetch(
     // Fetch a single movie detail by its slug.
-    `https://api.example.com/movies/${slug}`,
+    `https://api.example.com/movies/${slug}`
   ).catch((error) => {
     throw redirect('/movies')
   })
@@ -121,7 +121,6 @@ export default function MovieDetailPage() {
           </Link>
         </div>
       </div>
-
       <div>
         <h1 className="text-4xl font-extrabold mb-3">{movie.title}</h1>
         <p className="text-neutral-400">
@@ -132,7 +131,7 @@ export default function MovieDetailPage() {
       </div>
 
       <div className="col-span-full">
-        <RecommendedMovies />
+        <RecommendedMovies movieId={movie.id} />
       </div>
     </div>
   )
