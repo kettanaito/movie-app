@@ -7,7 +7,7 @@ export function RecommendedMovies() {
   const { state, error, data } =
     useRequest<Array<Movie>>(`/api/recommendations`)
 
-  if (state === 'idle' || (state === 'done' && data == null && error == null)) {
+  if (state === 'idle' || (state === 'done' && data == null) {
     return null
   }
 
