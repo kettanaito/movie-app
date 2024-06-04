@@ -17,8 +17,8 @@ npm --version
 You can use this repository to follow along the lessons. If you wish so, start by cloning the repository:
 
 ```sh
-git clone https://github.com/kettanaito/movies-app
-cd movies-app
+git clone https://github.com/kettanaito/movie-app
+cd movie-app
 npm install
 ```
 
